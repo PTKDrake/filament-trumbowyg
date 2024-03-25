@@ -16,7 +16,7 @@
 >
     <div
         wire:ignore
-        x-data="{ state: $wire.entangle('{{ $getStatePath() }}')}"
+        x-data="{ state: $wire.{{ $applyStateBindingModifiers("\$entangle('{$statePath}')") }}}"
     >
         <textarea
             x-on:{{ $editorId }}.window="(e) => state = e.detail.text"
